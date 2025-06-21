@@ -53,11 +53,13 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--primary-font);
 }
 section{
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--primary-font);
 }
 
 ul{
