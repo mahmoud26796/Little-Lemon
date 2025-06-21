@@ -1,3 +1,15 @@
+:root{
+  /* Variables */
+   --primary-color-one: #495E57;
+   --primary-color-two: #f4ce14;
+   --secondary-color-one:#ee9972;
+   --secondary-color-two:#fbdabb;
+   --secondary-color-three:#edefee;
+   --secondary-color-four:#333333;
+   /* Texts Styles */
+   --primary-font: "Markazi-Text";
+}
+
 .App {
   text-align: center;
 }
@@ -47,17 +59,28 @@ section{
   align-items: center;
   justify-content: center;
 }
+
+ul{
+  display: flex;
+  align-items: center;
+  gap: 20px
+}
+li{
+  list-style: none;
+}
 footer{
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 60px;
 }
-ul{
-  display: flex;
-  align-items: center;
-  gap: 10px
-}
-li{
-  list-style: none;
+
+/* SmallScreens */
+@media (max-width: 765px) {
+  ul{
+   gap:10px;
+ } 
+ footer{
+  gap: 40px
+ }
 }

@@ -2,7 +2,7 @@
 function Nav() {
     return (
         <nav>
-            <img src="../public/Asset-204x.png" alt="None" />
+            <img src="../public/Logo.svg" alt="Logo" />
             <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Menu</a></li>
