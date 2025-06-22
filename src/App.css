@@ -8,6 +8,7 @@
    --secondary-color-four:#333333;
    /* Texts Styles */
    --primary-font: "Markazi-Text";
+   --primary-size: 48px;
 }
 
 .App {
@@ -60,19 +61,26 @@ section{
   align-items: center;
   justify-content: center;
   font-family: var(--primary-font);
+  margin: 100px 0 50px 0;
 }
 
 ul{
   display: flex;
   align-items: center;
-  gap: 20px
+  gap: 20px;
 }
 li{
+  color: #282c34;
   list-style: none;
+}
+a{
+  color: #282c34;
+  text-decoration: none;
+  font-weight: 600;
 }
 footer{
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   gap: 60px;
 }
@@ -85,4 +93,55 @@ footer{
  footer{
   gap: 40px
  }
+}
+
+.hero-section{
+  background-color: var(--primary-color-one);
+  height: 400px;
+  position: relative;
+}
+.container{
+  width: 50%;
+  position: absolute;
+  bottom: 120px;
+  left: 485px;
+  text-align: left;
+}
+.main-title{
+  color:var(--primary-color-two);
+  font-size: var(--primary-size);
+  margin-bottom: 0;
+}
+.secondary-title, .disc{
+  color: white;
+}
+
+.secondary-title{
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 0;
+
+}
+.disc{
+  font-weight: 600;
+  width: 35%;
+  letter-spacing: 1.2px;
+  line-height: 19px;
+}
+
+.reserve{
+  background-color: var(--primary-color-two);
+  border:none;
+  border-radius: 8px;
+  text-align: center;
+  padding: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.hero-img{
+  width: 280px;
+  overflow: hidden;
+  position: absolute;
+  right: 300px;
+  top: 30px;
 }

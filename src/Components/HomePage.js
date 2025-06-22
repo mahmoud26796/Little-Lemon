@@ -1,6 +1,13 @@
+
+import Footer from "./Footer";
+import Main from "./Main";
+
 function HomePage() {
     return (
-        <h1>Home Page</h1>
+        <>
+            <Main />
+            <Footer />
+        </>
     )
 }
 
