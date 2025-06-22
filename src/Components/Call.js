@@ -9,7 +9,7 @@ function Call() {
                     focused on traditional recipes served with
                     a modern twist.
                 </p>
-                <button className="reserve">Reserve A Table</button>
+                <button className="reserve"><a href="/booking">Reserve A Table</a></button>
             </div>
             <img src="/assets/restauranfood.jpg" alt="none" className="hero-img"/>
         </section>
