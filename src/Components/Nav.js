@@ -1,7 +1,9 @@
 function Nav() {
     return (
         <nav>
-            <img src="../public/Logo.svg" alt="Logo" />
+            <dvi>
+                <img className="main-logo" src="assets/Logo.svg" alt="Logo"  />
+            </dvi>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="#">About</a></li>

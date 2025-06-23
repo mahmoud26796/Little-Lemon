@@ -1,0 +1,41 @@
+@import '../../App.css';
+
+
+img.rest{
+    width: 100%;
+    margin-top: 50px;
+    height: 450px;
+}
+.res-title{
+    font-family: var(--primary-font);
+    font-size: var(--primary-size);
+    color: var(--primary-color-four);
+    margin-top: 50px;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+}
+form{
+    height: 300px;
+    width: 500px;
+}
+label, input{
+    margin: 8px;
+    overflow: hidden;
+}
+button[type=submit]{
+    background-color: var(--primary-color-two);
+    cursor: pointer;
+    border: 1px solid var(--primary-color-four);
+    border-radius: 8px;
+    width: 35%;
+    font-weight:700;
+    font-family: var(--primary-font);
+    text-align: center;
+    padding: 7px 0;
+    margin-top: 10px;
+}

@@ -55,6 +55,13 @@ nav{
   align-items: center;
   justify-content: center;
   font-family: var(--primary-font);
+  margin-top: 25px;
+}
+.main-logo{
+  width: 150px; 
+  position: relative; 
+  top: -8px;
+  right: 45px
 }
 section{
   display: flex;
