@@ -1,17 +1,9 @@
 import { useState } from "react"
-function BookingForm() {
+function BookingForm({ dispatch, availableTimes }) {
     const [date, setDate] = useState("");
-    const [availableTimes, setAvailableTimes] = useState([
-        { id: 1, option: '17:00' },
-        { id: 2, option: '18:00' },
-        { id: 3, option: '19:00' },
-        { id: 4, option: '20:00' },
-        { id: 5, option: '21:00' },
-        { id: 6, option: '22:00' },
-    ]);
 
     const handleDateInput = (e) => {
-        console.log(e.target.value);
+        dispatch({ type: "initialized", payload: e.target.value });
     };
 
     const handleSelection = (e) => {
@@ -25,6 +17,11 @@ function BookingForm() {
     const handleOcassion = (e) => {
         console.log(e.target.value);
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
+    let availableTimesInit = availableTimes();
     return (
         <>
             <div className='form-container'>
@@ -37,7 +34,7 @@ function BookingForm() {
                     <div className="form-group">
                         <label htmlFor="res-time" className='form-control'>Choose Time</label>
                         <select id="res-time" className="form-select" aria-label="Default select example" onChange={handleSelection}>
-                            {availableTimes.map(o => <option key={o.id}>{o.option}</option>)}
+                            {availableTimesInit.map(o => <option key={o.id}>{o.option}</option>)}
                         </select>
                     </div>
                     <div class="form-group">
@@ -51,7 +48,7 @@ function BookingForm() {
                             <option>Anniversary</option>
                         </select>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
         </>

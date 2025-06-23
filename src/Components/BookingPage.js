@@ -1,6 +1,6 @@
 import '../Components/styles/booking-page.css';
 import BookingForm from './BookingForm';
-function BookingPage() {
+function BookingPage({ dispatch, availableTimes }) {
     return (
         <>
             <div>
@@ -9,7 +9,7 @@ function BookingPage() {
             <div>
                 <h1 className="res-title">Book Your Table!</h1>
             </div>
-            <BookingForm />
+            <BookingForm dispatch={dispatch} availableTimes={availableTimes} />
         </>
     )
 };
