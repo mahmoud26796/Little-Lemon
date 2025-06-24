@@ -1,9 +1,7 @@
 import './App.css';
 import BookingPage from './Components/BookingPage';
-import Footer from './Components/Footer';
 import Header from './Components/Header';
 import HomePage from './Components/HomePage';
-import Main from './Components/Main';
 import { Routes, Route } from 'react-router-dom';
 
 // Hooks
@@ -23,7 +21,7 @@ function App() {
 
   const updateTimes = (dateState, action) => {
     if (action.type === "initialized") {
-      console.log("initializing");
+      console.log(action.payload);
       return dateState;
     }
   };
