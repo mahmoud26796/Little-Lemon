@@ -1,5 +1,5 @@
 import { useState } from "react"
-function BookingForm({ dispatch, availableTimes }) {
+function BookingForm({ dispatch, initializeTimes }) {
     const [date, setDate] = useState("");
 
     const handleDateInput = (e) => {
@@ -21,7 +21,7 @@ function BookingForm({ dispatch, availableTimes }) {
     const handleSubmit = (e) => {
         // e.preventDefault();
     };
-    let availableTimesInit = availableTimes();
+    let availableTimesInit = initializeTimes();
     return (
         <>
             <div>
