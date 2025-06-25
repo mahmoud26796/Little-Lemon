@@ -18,31 +18,31 @@ function BookingPage() {
         if (action.type === "initialized") {
             let date = action.payload;
             console.log(action.payload);
-            return date;
+            return availableTimesInit;
         }
+        return dateState;
     };
 
     const [times, setTimes] = useState([]);
-    const date = updateTimes(times, "initialized");
-    useEffect(() => {
-        if (window.fetchAPI) {
-            const data = window.fetchAPI(date);
-            console.log(data);
+    // useEffect(() => {
 
-            setTimes(data);
-        }
-    }, []);
+    // }, []);
     const initializeTimes = () => {
+        const date = new Date();
+        if (window.fetchAPI) {
+            const availableNewTimes = window.fetchAPI(date);
+            if (availableNewTimes) console.log(availableNewTimes);
+        }
 
         return availableTimesInit;
     };
-    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
+    const [availableTimes, dispatch] = useReducer(updateTimes, undefined, initializeTimes);
     return (
         <>
             <div>
                 <img src='assets/restaurant.jpg' alt='resturant' className='rest' />
             </div>
-            <BookingForm dispatch={dispatch} initializeTimes={initializeTimes} />
+            <BookingForm dispatch={dispatch} availableTimes={availableTimes} />
         </>
     )
 };

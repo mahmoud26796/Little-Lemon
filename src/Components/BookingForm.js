@@ -1,5 +1,5 @@
 import { useState } from "react"
-function BookingForm({ dispatch, initializeTimes }) {
+function BookingForm({ dispatch, availableTimes }) {
     const [date, setDate] = useState("");
 
     const handleDateInput = (e) => {
@@ -21,7 +21,6 @@ function BookingForm({ dispatch, initializeTimes }) {
     const handleSubmit = (e) => {
         // e.preventDefault();
     };
-    let availableTimesInit = initializeTimes();
     return (
         <>
             <div>
@@ -36,7 +35,7 @@ function BookingForm({ dispatch, initializeTimes }) {
                     <div className="form-group">
                         <label htmlFor="res-time" className='form-control'>Choose Time</label>
                         <select id="res-time" className="form-select" aria-label="Default select example" onChange={handleSelection}>
-                            {availableTimesInit.map(o => <option data-test-id="ops" key={o.id}>{o.option}</option>)}
+                            {availableTimes.map(o => <option data-test-id="ops" key={o.id}>{o.option}</option>)}
                         </select>
                     </div>
                     <div className="form-group">
