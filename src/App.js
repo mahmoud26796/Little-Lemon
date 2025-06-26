@@ -1,5 +1,6 @@
 import './App.css';
-import BookingPage from './Components/BookingPage';
+import BookingPage from './Components/Bookings/BookingPage';
+import ConfirmedBooking from './Components/Bookings/ConfirmedBooking';
 import Header from './Components/Header';
 import HomePage from './Components/HomePage';
 import { Routes, Route } from 'react-router-dom';
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/booking' element={<BookingPage />}></Route>
+          <Route path='/confirm-booking' element={<ConfirmedBooking />}></Route>
         </Routes>
       </div>
     </>

@@ -19,7 +19,7 @@ function BookingForm({ dispatch, availableTimes }) {
     };
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
     };
     return (
         <>
@@ -35,7 +35,7 @@ function BookingForm({ dispatch, availableTimes }) {
                     <div className="form-group">
                         <label htmlFor="res-time" className='form-control'>Choose Time</label>
                         <select id="res-time" className="form-select" aria-label="Default select example" onChange={handleSelection}>
-                            {availableTimes.map(o => <option data-test-id="ops" key={o.id}>{o.option}</option>)}
+                            {availableTimes.map((o, i) => <option data-test-id="ops" key={i}>{o}</option>)}
                         </select>
                     </div>
                     <div className="form-group">
