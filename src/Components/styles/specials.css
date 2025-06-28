@@ -1,0 +1,46 @@
+.specials-img{
+    width : 350px;
+    max-height: 233.33px;
+    border-radius: 12px;
+    margin: 0 10px;
+}
+
+.card{
+    background-color: var(--secondary-color-three);
+    width: 350px;
+    border: none;
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.price{
+    color: var(--secondary-color-one);
+}
+
+.food-desc{
+    width: 80%;
+    text-align: left;
+    position: relative;
+     top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 40px;
+}
+
+
+.main-btn.special{
+    padding: 12px;
+    width: 25%;
+}
+@media (max-width: 998px) {
+    .main-btn.special{
+        padding: 9px;
+        width: 35%;
+    }
+}
+@media (max-width: 768px) {
+    .main-btn.special{
+        padding: 6px;
+        width: 45%;
+    }
+}

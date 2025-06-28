@@ -1,0 +1,21 @@
+footer{
+    background-color: var(--primary-color-one);
+    color: white;
+    padding: 150px 0;
+    margin-top: 100px;
+}
+footer > h4{
+    text-align: left;
+}
+.footer-logo{
+    width: 450px;
+}
+.footer-li{
+    list-style: none;
+    text-align: left;
+    margin-bottom: 7px;
+}
+
+.footer-li > a{
+    color: var(--secondary-color-three)
+}
