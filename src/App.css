@@ -6,9 +6,17 @@
    --secondary-color-two:#fbdabb;
    --secondary-color-three:#edefee;
    --secondary-color-four:#333333;
+   --card-color: #edefee;
    /* Texts Styles */
    --primary-font: "Markazi-Text";
    --primary-size: 48px;
+   --secondary-size: 28px;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
 }
 .App {
   text-align: center;
@@ -47,4 +55,61 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+section{
+  margin: 100px 0 50px 0;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--primary-font);
+  margin-top: 25px;
+}
+.main-logo{
+  width: 150px; 
+  position: relative; 
+  top: -8px;
+  right: 45px
+}
+.main-btn{
+  background-color: var(--primary-color-two);
+  border:none;
+  border-radius: 8px;
+  text-align: center;
+  padding: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+ul.nav-ul{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+li.nav-li{
+  color: #282c34;
+  list-style: none;
+}
+a{
+  color: #282c34;
+  text-decoration: none;
+  font-weight: 600;
+}
+footer{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 60px;
+}
+
+/* SmallScreens */
+@media (max-width: 765px) {
+  ul{
+   gap:10px;
+ } 
+ footer{
+  gap: 40px
+ }
 }
