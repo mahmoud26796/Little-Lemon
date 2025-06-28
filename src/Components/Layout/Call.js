@@ -1,3 +1,4 @@
+import '.././styles/call-style.css'
 function Call() {
     return (
         <section className="hero-section">
