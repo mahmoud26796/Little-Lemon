@@ -1,12 +1,29 @@
+import { use, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function BookingForm({ dispatch, availableTimes, submitForm }) {
 
     const navigate = useNavigate();
-    const handleDateInput = (e) => {
 
+    const [date, setDate] = useState("");
+    const handleDateInput = (e) => {
+        setDate(e.target.value);
         dispatch({ type: "initialized", payload: e.target.value });
     };
+
+    const [time, setTime] = useState("");
+    const handleTimeInput = (e) => {
+        setTime(e.target.value);
+    };
+    const [numGustes, setNumGustes] = useState(1);
+    const handleGustesInput = (e) => {
+        setNumGustes(e.target.value);
+    };
+    const [occasion, setOccasion] = useState("");
+    const handleOcassionInput = (e) => {
+        setOccasion(e.target.value)
+    };
+    const isFormCompleded = date && time && numGustes && occasion;
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -32,6 +49,7 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
                             name="date"
                             placeholder="Enter Date"
                             onChange={handleDateInput}
+                            required
                         />
                     </div>
 
@@ -42,6 +60,8 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
                             className="form-select"
                             name="time"
                             aria-label="Default select example"
+                            required
+                            onChange={handleTimeInput}
                         >
                             {availableTimes.map((o, i) => (
                                 <option data-test-id="ops" key={i} value={o}>
@@ -61,6 +81,7 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
                             className="form-control"
                             id="gustes"
                             name="guests"
+                            onChange={handleGustesInput}
                         />
                     </div>
 
@@ -71,13 +92,16 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
                             className="form-select"
                             name="occasion"
                             aria-label="Default select example"
+                            required
+                            onChange={handleOcassionInput}
                         >
+                            <option></option>
                             <option value="birthday">Birthday</option>
                             <option value="anniversary">Anniversary</option>
                         </select>
                     </div>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" disabled={!isFormCompleded}>Submit</button>
                 </form>
             </div>
         </>
