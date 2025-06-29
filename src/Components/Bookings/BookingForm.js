@@ -1,25 +1,20 @@
-import { useState } from "react"
-function BookingForm({ dispatch, availableTimes }) {
-    const [date, setDate] = useState("");
+import { useNavigate } from "react-router-dom";
 
+function BookingForm({ dispatch, availableTimes, submitForm }) {
+
+    const navigate = useNavigate();
     const handleDateInput = (e) => {
+
         dispatch({ type: "initialized", payload: e.target.value });
     };
-
-    const handleSelection = (e) => {
-        console.log(e.target.value);
-    };
-
-    const handleNumGuests = (e) => {
-        console.log(e.target.value);
-    };
-
-    const handleOcassion = (e) => {
-        console.log(e.target.value);
-    };
-
-    const handleSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData);
+        if (submitForm(data)) {
+            navigate('/booked');
+        }
+
     };
     return (
         <>
@@ -27,29 +22,62 @@ function BookingForm({ dispatch, availableTimes }) {
                 <h1 className="res-title">Book Now!</h1>
             </div>
             <div className='form-container'>
-                <form>
+                <form onSubmit={onSubmit}>
                     <div className="form-group">
                         <label htmlFor="date">Choose Date:</label>
-                        <input type="date" className="form-control" id="date" placeholder="Enter Date" onChange={handleDateInput} />
+                        <input
+                            type="date"
+                            className="form-control"
+                            id="date"
+                            name="date"
+                            placeholder="Enter Date"
+                            onChange={handleDateInput}
+                        />
                     </div>
+
                     <div className="form-group">
-                        <label htmlFor="res-time" className='form-control'>Choose Time</label>
-                        <select id="res-time" className="form-select" aria-label="Default select example" onChange={handleSelection}>
-                            {availableTimes.map((o, i) => <option data-test-id="ops" key={i}>{o}</option>)}
+                        <label htmlFor="res-time" className="form-control">Choose Time</label>
+                        <select
+                            id="res-time"
+                            className="form-select"
+                            name="time"
+                            aria-label="Default select example"
+                        >
+                            {availableTimes.map((o, i) => (
+                                <option data-test-id="ops" key={i} value={o}>
+                                    {o}
+                                </option>
+                            ))}
                         </select>
                     </div>
+
                     <div className="form-group">
-                        <label htmlFor="gustes">Number of gustes:</label>
-                        <input type="number" placeholder="1" min="1" max="10" className="form-control" id="gustes" onChange={handleNumGuests} />
+                        <label htmlFor="gustes">Number of guests:</label>
+                        <input
+                            type="number"
+                            placeholder="1"
+                            min="1"
+                            max="10"
+                            className="form-control"
+                            id="gustes"
+                            name="guests"
+                        />
                     </div>
+
                     <div className="form-group">
-                        <label htmlFor="occasion" className='form-control'>Occasion</label>
-                        <select id="occasion-time" className="form-select" aria-label="Default select example" onChange={handleOcassion}>
-                            <option>Birthday</option>
-                            <option>Anniversary</option>
+                        <label htmlFor="occasion-time" className="form-control">Occasion</label>
+                        <select
+                            id="occasion-time"
+                            className="form-select"
+                            name="occasion"
+                            aria-label="Default select example"
+                        >
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
                         </select>
                     </div>
-                    <button type="submit" onClick={handleSubmit}>Submit</button>
+
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </>

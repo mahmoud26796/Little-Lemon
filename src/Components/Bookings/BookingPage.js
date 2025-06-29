@@ -3,7 +3,7 @@ import './../styles/booking-page.css';
 //Hooks
 import { useReducer } from 'react';
 import BookingForm from './BookingForm';
-import { fetchAPI } from "./Helper.js";
+import { fetchAPI, submitAPI } from "./Helper.js";
 
 function BookingPage() {
     const updateTimes = (dateState, action) => { // should handle the select/choose date input
@@ -20,13 +20,16 @@ function BookingPage() {
     const initializeTimes = () => { // should return the availableTimes
         return [];
     };
+
+    const submitForm = (formData) => submitAPI(formData); //submitting the form data to API
+    ;
     const [availableTimes, dispatch] = useReducer(updateTimes, undefined, initializeTimes);
     return (
         <>
             <div>
                 <img src='assets/restaurant.jpg' alt='resturant' className='rest' />
             </div>
-            <BookingForm dispatch={dispatch} availableTimes={availableTimes} />
+            <BookingForm dispatch={dispatch} availableTimes={availableTimes} submitForm={submitForm} />
         </>
     )
 };
