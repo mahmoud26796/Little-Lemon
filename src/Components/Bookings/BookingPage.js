@@ -22,7 +22,7 @@ function BookingPage() {
     };
 
     const submitForm = (formData) => submitAPI(formData); //submitting the form data to API
-    ;
+    
     const [availableTimes, dispatch] = useReducer(updateTimes, undefined, initializeTimes);
     return (
         <>
