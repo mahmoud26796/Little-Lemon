@@ -5,6 +5,7 @@ import Footer from './Components/Layout/Footer';
 import Header from './Components/Layout/Header';
 import HomePage from './Components/Layout/HomePage';
 import { Routes, Route } from 'react-router-dom';
+import Order from './Components/Layout/Order';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/booking' element={<BookingPage />}></Route>
           <Route path='/booked' element={<ConfirmedBooking />}></Route>
+          <Route path='/order' element={<Order />}></Route>
         </Routes>
         <Footer />
       </div>

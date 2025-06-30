@@ -1,0 +1,15 @@
+.testimonials{
+    margin-bottom:150px ;
+}
+.test-card{
+    max-height: 400px;
+}
+
+.user-img{
+    width: 150px;
+    height: 150px;
+}
+
+.review{
+    width: 70%;
+}
