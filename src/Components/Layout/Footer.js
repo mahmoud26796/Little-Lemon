@@ -1,7 +1,7 @@
 import '../styles/footer.css';
 function Footer() {
     return (
-        <footer>
+        <footer id='footer' aria-description='website footer'>
             <div className="container">
                 <div className="row">
                     <div className="col-3">
